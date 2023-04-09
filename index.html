@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>img filter</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        body {
+            background-color:#333;
+        }
+        .container {
+            background-color:#222;
+            padding:10px 0px;
+            width:80vw;
+            margin:auto;
+            display:grid;
+            grid-template-columns: 5fr 3fr;
+        }
+        .container .Box-img {
+           display:flex;
+           flex-direction: column;
+           gap:30px;
+           justify-content:center;
+           align-items:center;
+            
+        }
+        .container .Box-img img{
+            max-width:500px
+        }
+        .container .filters {
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            direction:rtl;
+        }
+        .container .filters ul{
+            display:flex;
+            flex-direction:column;
+            gap:25px;
+        }
+        .container .filters ul li input {
+            width:100%;
+        }
+        .container .filters ul li label {
+            color:white;
+            display:inline-block;
+            margin:10px;
+            font-size:20px;
+        }
+        .Upload input {
+            display:none;
+        }
+        .Upload label {
+            color:white;
+            border:2px dashed;
+            padding:5px 10px;
+            cursor:pointer;
+
+        }
+        span {
+            color:white;
+            background-color:rgb(25, 166, 25);
+            padding:10px;
+            cursor:pointer;
+        }
+        .span {
+            display:flex;
+            justify-content: space-around;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="Box-img">
+            <img >
+            <div class="Upload">  
+                <label for="Upload">Upload</label>
+                <input type="file" id="Upload">
+            </div>
+              
+        </div>
+        <div class="filters">
+            <ul>
+                <li>
+                    <label for="saturate">Saturate</label>
+                    <input type="range" id="saturate" min="0" max="200" value="100">
+                </li>
+                <li>
+                    <label for="contrst">Contrast</label>
+                    <input type="range" id="contrast" min="0" max="200" value="100">
+                </li>
+                <li>
+                    <label for="brightness">Brightness</label>
+                    <input type="range" id="brightness" min="0" max="200" value="100">
+                </li>
+                <li>
+                    <label for="blur">Blur</label>
+                    <input type="range" id="blur" min="0" step="0.1" max="1" value="0">
+                </li>
+                <li>
+                    <label for="hue-rotate">hue-rotate</label>
+                    <input type="range" id="hue-rotate" min="0" max="350" value="0">
+                </li>
+                <li class="span">
+                    <span class="reset">Reset</span>
+                    <span class="download">download</span>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <script src="imgfilter.js"></script>
+</body>
+</html>
